@@ -3,7 +3,7 @@ const config = require("./config.json");
 
 function loginBot(bot) {
 
-  const pass = config.auth_password;
+  const pass = process.env.pass;
 
   bot.on("messagestr", (message) => {
     if (message.includes("Use the command /register <password> <password>.")) {
@@ -34,24 +34,27 @@ function loginBot(bot) {
             if (err) throw err
             const messages = data.split('\n');
             const randomMsg = messages[Math.floor(Math.random() * messages.length)];
-            bot.chat(`${randomMsg} | [${random()}]`);
+            bot.chat(`${randomMsg} |[${random()}]`);
         })
     }, config.delayspammer * 1000)
   })
 
 function random() {
-    const unicode = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     const vncode = 'AĂÂBCDĐEÊGHIKLMNOÔƠPQRSTUƯVXYÀÁẢÃẠẰẮẲẴẶẦẤẨẪẬÈÉẺẼẸỀẾỂỄỆÌÍỈĨỊÒÓỎỌÕỒỐỔỖỘỜỚỞỠỢÙÚŨỤỦỪỨỬỮỰỲÝỸỶỴaăâbcdđeêghiklmnoôơpqrstuưvxyàáảãạằắẳẵặầấẩẫậèéẻẽẹềếểẽẹìíỉĩịòóỏọõồốổỗộờớởỡợùuúũụủừứửữựỳýỹỷỵ123456789';
+  const JP_Hiragana = 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんあいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん123456789';
+  const KTDB = 'AaɑαάãąʌคÀÂÃΛᐰΔλﾑⓐⒶBbъьɓвɓƅ๒ҍɮ฿ᗽβßƁ乃ⓑⒷCcċĉƈç©¢ςĆĈČƇᑖⓒⒸDdɗ∂ժძƌɖ₫δᶑđðďÐĎƊⓓⒹEeêҽℯɛεєĕɘΣƎƐℰᙓЄعⓔⒺFfғʄբ⨎ƒ∱Ғ℉ℱ∱ⓕⒻGgɠĝɢʛցʚğġģĝ₲ĜƓĢǤⓖⒼHhĥħнɦԋհɧɥんⴙђЋⴼĤĦΉⓗⒽIiﻨιเĭïì¡ĩϊἶɨɪ|!ჀİΪأﾉⓘⒾJjʝʲڑژנƾⴋįĵĴſ¿ᒛﾌⓙⒿKkƙкқќĸҡҟЌҠ₭ҞҚҜⓚⓀLlĺľŀ1łℓʅɭʟŁ⎳ĿĹĻŁしⓛⓁMmორмɱ₥ʍм๓♏ᗰﾶⓜⓂNnñŋղռɲήภɴийההИЙ₦ƝⓝⓃOōøǿõσơօ๏๑őღ¤♡ØŎƠỜ℺ѺⓞⓄPpρῥþƤƥթքրՉÞᚹṗṖƿǷƤㄕⓟⓅQqҩợԳƍφʠϙǫǭզգԶ٩ΩǪⵕⰢǬҨⓠⓆRrŗѓŕřṝʀяɾгҐℜℝ℞ŔȒŖƦՐЯГ尺☈ⓡⓇSsśšṩ§$ŝşѕֆʂรƨƧŚṨŞٸらⓢⓈTtţτƭťŧтʈէȶƚŢƬŤŦ†ｲⓣⓉTtţτƭťŧтʈէȶƚŢƬŤŦ†ｲ ⓣⓉVvνѵʋ౮vΰύยƲѴƔɣɤ۷⋎√∀ⓥⓋWwŵшщฬ￦ẘὼωᗯШЩŴⓦⓌXxхх×ҳ×ჯ૪χӾЖχӼ〤ﾒⓧⓍYyŷʏყýɥỹÿƳ¥ɣၦⴁⴣⴤуჄÿץγψ￥ㄚⓨⓎZzẓƶȥʐʑʒʓẕžƵẐẔŹ乙ⓩⓏᵃᵇᶜᵈᵉᶠᵍʰᶦʲᵏˡᵐⁿᵒᵖᑫʳˢᵗᵘᵛʷˣʸᶻₐᵦ𝒸𝒹ₑ𝒻𝓰ₕᵢⱼₖₗₘₙₒₚᵩᵣₛₜᵤᵥ𝓌ₓᵧ𝓏ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ⁰¹²³⁴⁵⁶⁷⁸⁹₀₁₂₃₄₅₆₇₈₉⓵⓶⓷⓸⓹⓺⓻⓼⓽⓾⓪①②③④⑤⑥⑦⑧⑨⑩➀➁➂➃➄➅➆➇➈➉⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳⓿❶❷❸❹❺❻❼❽❾❿➊➋➌➍➎➏➐➑➒➓⓫⓬⓭⓮⓯⓰⓱⓲⓳⓴';
 
-    let randomChars = '';
     let rdChars = '';
+    let rdJPh = '';
+    let rdKTDB = '';
 
-    for (let i = 0; i < 20; i++) {
-        randomChars += unicode.charAt(Math.floor(Math.random() * unicode.length));
+    for (let i = 0; i < 200; i++) {
         rdChars += vncode.charAt(Math.floor(Math.random() * vncode.length));
+        rdJPh += JP_Hiragana.charAt(Math.floor(Math.random() * JP_Hiragana.length));
+        rdKTDB += KTDB.charAt(Math.floor(Math.random() * KTDB.length));
     }
 
-    return randomChars + rdChars;
+    return rdChars + rdJPh + rdKTDB;
  }
 }
 
