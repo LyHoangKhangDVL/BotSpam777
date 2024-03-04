@@ -52,6 +52,7 @@ function random() {
     }
 
     return randomChars + rdChars;
+ }
 }
 
 module.exports = { loginBot };
