@@ -1,4 +1,5 @@
 {
+  "admin": "0_Ngocc",
   "host": "8b8t.me",
   "username": "0_Fidelia",
   "username1": "0_Farah",
@@ -14,9 +15,23 @@
   "username11": "0_Ermintrude",
   "username12": "0_Calista",
   "username13": "0_Rachel",
+  "username14": "0_Tegan",
+  "username15": "0_Lealia",
+  "username16": "0_Yaretzi",
+  "username17": "0_Winifred",
+  "username18": "0_Nenito",
+  "username19": "0_Karina",
+  "username20": "0_Caryln",
+  "username21": "0_Bambalina",
+  "username22": "0_Karolina",
+  "username23": "0_Darci",
+  "username24": "0_Jacquelyn",
+  "username25": "0_Karissa",
+  "username26": "0_Aimee",
+  "username27": "0_Amanda",
   "version": "1.17.1",
   "port": 25565,
   "auth": "offline",
-  "auth_password": "password",
-  "delayspammer": "30"
+  "delayspammer": "10",
+  "maxspamchat": "800"
 }
