@@ -9,10 +9,10 @@ function loginBot(bot) {
   
   bot.on("messagestr", (message) => {
     if (message.includes("Use the command /register <password> <password>.")) {
-      bot.chat(`/register ${pass} ${pass}`);
+      bot.chat(`/register dmcs777 dmcs777`);
     }
     if (message.includes("Use the command /login <password>.")) {
-        bot.chat(`/login ${pass}`);
+        bot.chat(`/login dmcs777`);
     }
     if  (message.includes(`Your login session has been continued.`)) {
       bot.chat(`/8b8t`);
